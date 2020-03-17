@@ -1,0 +1,19 @@
+{{- /* Custom by chishui Begin */ -}}
+    {{- if .Site.Params.home.recommends.enable -}}
+        <div class="recommend">
+            <div class="recommend-wrapper">
+                {{range first 3 ( where .Site.Pages ".Params.recommend" true )}}
+                    <div class="recommend-item">
+                        <div class="recommend-item-wrapper lazyload" style="background-image: url('{{ .Params.featuredImage | safeURL }}')">
+                            <a href="{{ .Permalink }}" class="recommend-item-link">
+                                <div class="recommend-item-title">
+                                    <h3>{{ .Title }}</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    {{- end -}}
+{{- /* Custom by chishui End */ -}}

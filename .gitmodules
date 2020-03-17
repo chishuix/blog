@@ -1,0 +1,4 @@
+[submodule "themes/LoveIt"]
+	path = themes/LoveIt
+	url = https://github.com/inyours/LoveIt.git
+	branch = master

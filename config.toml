@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://www.u1s3.com"
 # [en, zh-CN, ...] determines default content language
 # [en, zh-CN, ...] 设置默认的语言
 defaultContentLanguage = "en"
@@ -40,31 +40,43 @@ enableEmoji = true
     dateFormatToUse = "2006-01-02"
     # Menu Info
     [languages.en.menu]
-      [[languages.en.menu.main]]
+      [[languages.en.menu.main]]       
         identifier = "posts"
+        # you can add extra information before the name (HTML format is allowed), such as icons
+        pre = ""
         name = "Posts"
         url = "/posts/"
+        # title will be shown when you hover on this menu link.
+        title = ""
         weight = 1
       [[languages.en.menu.main]]
         identifier = "tags"
+        pre = ""
         name = "Tags"
         url = "/tags/"
+        title = ""
         weight = 2
       [[languages.en.menu.main]]
         identifier = "categories"
+        pre = ""
         name = "Categories"
         url = "/categories/"
+        title = ""
         weight = 3
       [[languages.en.menu.main]]
         identifier = "favorites"
+        pre = ""
         name = "Favorites"
         url = "/posts/favorites/"
+        title = ""
         weight = 4
-      # [[languages.en.menu.main]]
-        # identifier = "about"
-        # name = "About"
-        # url = "/about/"
-        # weight = 4
+      [[languages.en.menu.main]]
+        identifier = "github"
+        pre = "<i class='fab fa-github fa-fw'></i>"
+        name = ""
+        url = "https://github.com/chishuix"
+        title = ""
+        weight = 5
       [languages.en.params]
         # site description
         description = "有一说三，池水的一片海。 "
@@ -99,16 +111,16 @@ enableEmoji = true
             enable = true
         # Social Info in home page
         [languages.en.params.social]
-          GitHub = "U1S3"
-          # Linkedin = "xxxx"
-          # Twitter = "xxxx"
-          # Instagram = "xxxx"
-          # Email = "hi@u1s3.com"
-          # Facebook = "xxxx"
-          # Telegram = "xxxx"
+          GitHub = "xxxx"
+          Linkedin = "xxxx"
+          Twitter = "xxxx"
+          Instagram = "xxxx"
+          Email = "xxxx@xxxx.com"
+          Facebook = "xxxx"
+          Telegram = "xxxx"
           # Medium = "xxxx"
           # Gitlab = "xxxx"
-          # Youtubelegacy = "xxxx"
+          Youtubelegacy = "xxxx"
           # Youtubecustom = "xxxx"
           # Youtubechannel = "xxxx"
           # Tumblr ="xxxx"
@@ -165,7 +177,7 @@ enableEmoji = true
           # Bilibili = "xxxx"
         # Social Share Links in post page
         [languages.en.params.share]
-          enable = false
+          enable = true
           Twitter = true
           Facebook = true
           Linkedin = true
@@ -215,8 +227,9 @@ enableEmoji = true
             notify = false
             verify = true
             avatar = "mp"
-            # meta= ""
+            meta= ""
             pageSize = 10
+            lang = "en"
             visitor = true
             recordIP = true
           # Facebook Comment Config (https://developers.facebook.com/docs/plugins/comments)
@@ -234,6 +247,9 @@ enableEmoji = true
   # public git repo url only then enableGitInfo is true
   # 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效
   gitRepo = "https://github.com/dillonzq/LoveIt"
+  # which hash function used for SRI, when empty, no SRI is used ("sha256", "sha384", "sha512", "md5")
+  # 哪种哈希函数用来 SRI, 为空时表示不使用 SRI ("sha256", "sha384", "sha512", "md5")
+  fingerprint = ""
   # Header info
   # 页面头部导航栏信息
   [params.header]
@@ -306,7 +322,7 @@ enableEmoji = true
     width = 127
     height = 40
   # Website Image Info just for SEO
-  #  网站图标信息，仅用于 SEO
+  # 网站图标信息，仅用于 SEO
   [params.image]
     url = "/images/cover.jpg"
     width = 800

@@ -383,6 +383,11 @@ a {
     .icp {
       a {
         color: $global-font-color;
+        img {
+          width: 17px;
+          position: relative;
+          top: 3px;
+        }
         &:hover {
           color: $global-link-color;
         }
@@ -390,6 +395,8 @@ a {
     }
   }
 }
+
+.footer .copyright .copyright-line .icp a
 
 // 代码高亮北京
 .single .content .highlight>.chroma::before {

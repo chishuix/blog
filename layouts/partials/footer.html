@@ -16,6 +16,14 @@
                 <span class="icp-splitter">&nbsp;/&nbsp;</span><br class="icp-br"/>
                 <span class="icp">{{ . | safeHTML }}</span>
             {{- end -}}
+            
+            {{- /* BEIAN */ -}}
+            {{- with .Site.Params.footer.beian -}}
+                <span class="icp-splitter">&nbsp;/&nbsp;</span><br class="icp-br"/>
+                <span class="icp">{{ . | safeHTML }}</span>
+            {{- end -}}
+            
+            
         </div>
     </div>
 </footer>

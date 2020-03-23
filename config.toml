@@ -177,7 +177,7 @@ enableEmoji = true
           # Bilibili = "xxxx"
         # Social Share Links in post page
         [languages.en.params.share]
-          enable = true
+          enable = false
           Twitter = true
           Facebook = true
           Linkedin = true

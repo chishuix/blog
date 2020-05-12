@@ -1,4 +1,4 @@
-# Manjaro 常用软件
+# Manjaro 常用软件名称
 
 
 <!--more-->
@@ -41,6 +41,7 @@ $ yay -S dbeaver
 
 ```bash
 $ yay -S postman
+$ yay -S insomnia
 ```
 
 ### 数据库管理

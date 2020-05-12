@@ -4,37 +4,7 @@ date: 2020-01-16 10:38:14
 categories: Laravel
 ---
 
-> [API 设计原则](https://learnku.com/courses/laravel-advance-training/6.x/follow-github-to-learn-restful-http-api-design/5697)
 
-# 默认 ACCEPT 头
-
-API 开发时需要客户端发送  Accept Header 来告知服务端如何返回数据，但不可避免的有些时候客户端无法正确设置。在 Laravel 中可以通过自定义中间件来添加默认 Accept Header。**但还是推荐所有客户端正确设置 Accept Header。**
-
-```bash
-$ php artisan make:middleware AcceptHeader
-```
-
-*app/Http/Middleware/AcceptHeader.php*
-
-```php
-public function handle($request, Closure $next)
-{
-    $request->headers->set('Accept', 'application/json');
-    return $next($request);
-}
-```
-
-*app/Http/Kernel.php*
-
-```php
-protected $middlewareGroups = [
-    'api' => [
-        \App\Http\Middleware\AcceptHeader::class, // 添加此行
-        'throttle:60,1',
-        'bindings',
-    ],
-];
-```
 
 # API 基类
 

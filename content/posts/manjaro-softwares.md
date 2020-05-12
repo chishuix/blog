@@ -1,5 +1,5 @@
 ---
-title: "Manjaro 常用软件"
+title: "Manjaro 常用软件名称"
 date: 2020-03-23T15:06:41+08:00
 draft: false
 recommend: false
@@ -52,6 +52,7 @@ $ yay -S dbeaver
 
 ```bash
 $ yay -S postman
+$ yay -S insomnia
 ```
 
 ### 数据库管理

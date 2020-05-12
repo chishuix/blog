@@ -98,6 +98,50 @@ Route::prefix('v2')->name('api.v2.')->group(function () {
 });
 ```
 
+### 默认 Accept Header
+
+配置默认的 Accept Header **非常重要**，当设置为 `application/json` 时，Laravel 会自动处理报错为 Json 格式。
+
+一般的需要客户端在调用接口时设置，但有时客户端无法正确设置，此时可以通过新建一个中间件来给所有 API 路由手动设置。
+
+```bash
+$ php artisan make:middleware AcceptHeader
+```
+
+*app/Http/Middleware/AcceptHeader.php*
+
+```php
+public function handle($request, Closure $next)
+{
+    $request->headers->set('Accept', 'application/json');
+    return $next($request);
+}
+```
+
+*app/Http/Kernel.php*
+
+```php
+protected $middlewareGroups = [
+    'api' => [
+        \App\Http\Middleware\AcceptHeader::class, // 添加此行
+        'throttle:60,1',
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+    ],
+];
+```
+
+**但还是推荐所有客户端正确设置 Accept Header。**
+
+
+
+
+
+
+
+
+
+
+
 ## 参考文档
 
 [L03 Laravel 教程 - 实战构架 API 服务器 ( Laravel 6.x )](https://learnku.com/courses/laravel-advance-training/6.x)

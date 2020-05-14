@@ -1,0 +1,81 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Manjaro 安装和配置 - U1S3</title><meta name=Description content="有一说三，池水的一片海。"><meta property="og:title" content="Manjaro 安装和配置"><meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://www.u1s3.com/posts/manjaro-install-and-config/"><meta property="article:published_time" content="2020-05-12T11:45:41+08:00"><meta property="article:modified_time" content="2020-05-12T11:45:41+08:00"><meta property="og:site_name" content="U1S3"><meta name=twitter:card content="summary"><meta name=twitter:title content="Manjaro 安装和配置"><meta name=twitter:description content><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel=canonical href=https://www.u1s3.com/posts/manjaro-install-and-config/><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=prev href=https://www.u1s3.com/posts/manjaro-install-sogoupinyin/><link rel=next href=https://www.u1s3.com/posts/manjaro-install-yay/><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><link rel=stylesheet href=/css/style.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Manjaro 安装和配置","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.u1s3.com\/posts\/manjaro-install-and-config\/"},"image":{"@type":"ImageObject","url":"https:\/\/www.u1s3.com\/images\/cover.jpg","width":800,"height":600},"genre":"posts","keywords":"Manjaro","wordcount":506,"url":"https:\/\/www.u1s3.com\/posts\/manjaro-install-and-config\/","datePublished":"2020-05-12","dateModified":"2020-05-12","license":"CC BY-NC 4.0","publisher":{"@type":"Organization","name":"chishui","logo":{"@type":"ImageObject","url":"https:\/\/www.u1s3.com\/images\/logo.jpg","width":127,"height":40}},"author":{"@type":"Person","name":"chishui"},"description":""}</script></head><body><script>if(!window.localStorage||!window.localStorage.getItem('theme')){window.isDark=window.matchMedia('(prefers-color-scheme: dark)').matches;}else{window.isDark=(window.localStorage&&window.localStorage.getItem('theme'))==='dark';}
+window.isDark&&document.body.classList.add('dark-theme');</script><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/>U1S3</a><div>有一说三，池水的一片海。</div></div><div class=menu><a class=menu-item href=/posts/>Posts</a><a class=menu-item href=/tags/>Tags</a><a class=menu-item href=/categories/>Categories</a><a class=menu-item href=/posts/favorites/>Favorites</a><a class=menu-item href=https://github.com/chishuix><i class="fab fa-github fa-fw"></i></a></div></div></header><header class=mobile id=header-mobile><div class=header-wrapper><div class=header-container><div class=header-title><a href=/>U1S3</a><div>有一说三，池水的一片海。</div></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><a class=menu-item href=/posts/>Posts</a><a class=menu-item href=/tags/>Tags</a><a class=menu-item href=/categories/>Categories</a><a class=menu-item href=/posts/favorites/>Favorites</a><a class=menu-item href=https://github.com/chishuix><i class="fab fa-github fa-fw"></i></a></div></div></header><script>window.desktopHeaderMode="normal";window.mobileHeaderMode="normal";</script><main class="main animated fadeIn"><div class=container><article class="page single"><h1 class=single-title>Manjaro 安装和配置</h1><div class=post-meta><div class=post-meta-line><span class=post-meta-line-item>Posted on <a href=javascript:void(0); datetime=2020-05-12>2020-05-12</a>&nbsp; by <a href=/ rel=author target=_blank>chishui</a></span></div></div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-sizes=auto data-srcset="//static.u1s3.com/images/f28e80b85dad82eac291f789056b1fca.jpg, //static.u1s3.com/images/f28e80b85dad82eac291f789056b1fca.jpg 1.5x, //static.u1s3.com/images/f28e80b85dad82eac291f789056b1fca.jpg 2x" data-src=//static.u1s3.com/images/f28e80b85dad82eac291f789056b1fca.jpg alt></div><div class=toc id=toc-auto><h2 class=toc-title></h2><div class=toc-content id=toc-content-auto></div></div><div class=toc id=toc-static><details><summary><div class=toc-title><span></span><span><i class="details icon fas fa-angle-down"></i></span></div></summary><div class=toc-content id=toc-content-static><nav id=TableOfContents><ul><li><a href=#分区方案>分区方案</a></li><li><a href=#配置国内镜像>配置国内镜像</a><ul><li><a href=#官方镜像>官方镜像</a></li><li><a href=#archlinuxcn-镜像>archlinuxcn 镜像</a></li><li><a href=#更新镜像及系统>更新镜像及系统</a></li></ul></li><li><a href=#常用软件安装>常用软件安装</a></li><li><a href=#启用-ssh-访问>启用 SSH 访问</a></li><li><a href=#使用微软雅黑>使用微软雅黑</a></li><li><a href=#英文文件夹名称>英文文件夹名称</a><ul><li><a href=#更改配置文件>更改配置文件</a></li><li><a href=#更改文件夹名称>更改文件夹名称</a></li><li><a href=#重启电脑>重启电脑</a></li></ul></li><li><a href=#建议字体>建议字体</a></li><li><a href=#参考文档>参考文档</a></li></ul></nav></div></details></div><div class=content id=content><h2 id=分区方案>分区方案</h2><p>硬件条件：120G SSD</p><table><thead><tr><th>挂载点</th><th>大小</th><th>标记</th><th>文件系统</th></tr></thead><tbody><tr><td>/boot/efi</td><td>1024M~2048M</td><td>ESP</td><td>fat32</td></tr><tr><td>/</td><td>60G</td><td></td><td>ext4</td></tr><tr><td>/home</td><td>40G</td><td></td><td>ext4</td></tr><tr><td>swap</td><td>8192M</td><td></td><td>linuxswap</td></tr></tbody></table><h2 id=配置国内镜像>配置国内镜像</h2><h3 id=官方镜像>官方镜像</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># 更新排序国内镜像 在弹窗中选择一个镜像</span>
+<span class=c1># 建议选择清华或交大</span>
+<span class=c1># 清华：https://mirrors.tuna.tsinghua.edu.cn/manjaro/</span>
+<span class=c1># 交大：https://mirrors.sjtug.sjtu.edu.cn/manjaro/</span>
+$ sudo pacman-mirrors -i -c China -m rank
+
+<span class=c1># 查看当前选择的源</span>
+$ sudo vim /etc/pacman.d/mirrorlist
+</code></pre></td></tr></table></div></div><h3 id=archlinuxcn-镜像>archlinuxcn 镜像</h3><p><em>/etc/pacman.conf</em></p><p>注意，这里只能选择使用其中一个。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback># 清华
+[archlinuxcn]
+SigLevel = Optional TrustAll
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+
+# 交大
+[archlinuxcn]
+SigLevel = Optional TrustAll
+Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux-cn/$arch
+</code></pre></td></tr></table></div></div><h3 id=更新镜像及系统>更新镜像及系统</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># 更新数据源</span>
+$ sudo pacman -Syy
+<span class=c1># 导入公钥</span>
+$ sudo pacman -S archlinuxcn-keyring
+<span class=c1># 更新系统</span>
+$ sudo pacman -Syyu
+</code></pre></td></tr></table></div></div><h2 id=常用软件安装>常用软件安装</h2><p><a href=/posts/manjaro-install-yay rel="noopener noreffer">Manjaro 安装 Yay</a></p><p><a href=/posts/manjaro-install-oh-my-zsh/ rel="noopener noreffer">Manjaro 安装 Oh My Zsh</a></p><p><a href=/posts/manjaro-sogoupinyin rel="noopener noreffer">Manjaro 安装 搜狗拼音输入法</a></p><p>[Manjaro 常用软件名称]</p><h2 id=启用-ssh-访问>启用 SSH 访问</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># 开机启动</span>
+$ systemctl <span class=nb>enable</span> sshd.service 
+<span class=c1># 立即启动</span>
+$ systemctl start sshd.service 
+<span class=c1># 立即重启</span>
+$ systemctl restart sshd.service 
+</code></pre></td></tr></table></div></div><h2 id=使用微软雅黑>使用微软雅黑</h2><h2 id=英文文件夹名称>英文文件夹名称</h2><h3 id=更改配置文件>更改配置文件</h3><p><em>~/.config/user-dirs.dirs</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-fallback data-lang=fallback>XDG_DESKTOP_DIR=&#34;$HOME/Desktop&#34;
+XDG_DOWNLOAD_DIR=&#34;$HOME/Downloads&#34;
+XDG_TEMPLATES_DIR=&#34;$HOME/Templates&#34;
+XDG_PUBLICSHARE_DIR=&#34;$HOME/Public&#34;
+XDG_DOCUMENTS_DIR=&#34;$HOME/Documents&#34;
+XDG_MUSIC_DIR=&#34;$HOME/Music&#34;
+XDG_PICTURES_DIR=&#34;$HOME/Pictures&#34;
+XDG_VIDEOS_DIR=&#34;$HOME/Videos&#34;
+</code></pre></td></tr></table></div></div><h3 id=更改文件夹名称>更改文件夹名称</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ mv 桌面 Desktop <span class=o>&amp;&amp;</span> mv 下载 Downloads <span class=o>&amp;&amp;</span> mv 模板 Templates <span class=o>&amp;&amp;</span> mv 公共 Public <span class=o>&amp;&amp;</span> mv 文档 Documents <span class=o>&amp;&amp;</span> mv 视频 Videos <span class=o>&amp;&amp;</span> mv 图片 Pictures <span class=o>&amp;&amp;</span> mv 音乐 Music
+</code></pre></td></tr></table></div></div><h3 id=重启电脑>重启电脑</h3><h2 id=建议字体>建议字体</h2><p>安装文泉驿黑体 <code>wqy-microhei</code>，通过系统字体管理修改字体。</p><h2 id=参考文档>参考文档</h2><p><a href=https://mirrors.tuna.tsinghua.edu.cn/ target=_blank rel="noopener noreffer">清华大学开源软件镜像站</a></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>The article was updated on 2020-05-12</span></div><div class=post-info-wordcount><span>506 words</span></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://www.u1s3.com/posts/manjaro-install-and-config/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section><div class=post-meta><div class=post-meta-line><span class="post-meta-line-item post-category"><span>Posted in</span><span><a href=/categories/programing>Programing</a></span></span><span class="post-meta-line-item post-tag">
+<span>Tagged</span><span><a href=/tags/manjaro>Manjaro</a></span></span></div></div></section><section><span><a href=javascript:window.history.back();>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=https://www.u1s3.com/posts/manjaro-install-sogoupinyin/ class=prev rel=prev title="Manjaro 安装 搜狗拼音输入法"><i class="fas fa-angle-left fa-fw"></i>Manjaro 安装 搜狗拼音输入法</a>
+<a href=https://www.u1s3.com/posts/manjaro-install-yay/ class=next rel=next title="Manjaro 安装 Yay">Manjaro 安装 Yay<i class="fas fa-angle-right fa-fw"></i></a></div></div><div class=comment></div></article></div></main><footer class=footer><div class=copyright><div class=copyright-line><i class="far fa-copyright fa-fw theme-switch"></i><span itemprop=copyrightYear>2017 - 2020</span><span class=icp-splitter>&nbsp;/&nbsp;</span><br class=icp-br><span class=icp><a href=http://www.beian.miit.gov.cn/ target=_blank>苏ICP备20010716号-1</a></span><span class=icp-splitter>&nbsp;/&nbsp;</span><br class=icp-br><span class=icp><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32031102001246" target=_blank><img src=/beian.png> 苏公网安备 32031102001246号</a></span></div></div></footer></div><a href=# class="dynamic-to-top animated faster" id=dynamic-to-top><span>&nbsp;</span>
+</a><script>document.addEventListener('DOMContentLoaded',function(){lightGallery(document.getElementById('content'),{selector:'.lightgallery',speed:400,hideBarsDelay:2000,thumbnail:true,exThumbImage:'data-thumbnail',thumbWidth:80,thumbContHeight:80,});});</script><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><script src=/lib/smooth-scroll/smooth-scroll.polyfills.min.js></script><script src=/lib/lazysizes/lazysizes.min.js></script><script src=/lib/lightgallery/lightgallery.min.js></script><script src=/lib/lightgallery/lg-thumbnail.min.js></script><script src=/lib/lightgallery/lg-zoom.min.js></script><script src=/js/theme.min.js></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-160608138-1','auto');ga('set','anonymizeIp',true);ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></body></html>

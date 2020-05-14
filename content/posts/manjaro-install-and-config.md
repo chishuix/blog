@@ -1,14 +1,14 @@
 ---
 title: "Manjaro 安装和配置"
 date: 2020-05-12T11:45:41+08:00
-draft: true
-recommend: false
+draft: false
+recommend: true
 
 tags: ['Manjaro']
 categories: ['Programing']
 hiddenFromHomePage: false
 
-featuredImage: ""
+featuredImage: "//static.u1s3.com/images/f28e80b85dad82eac291f789056b1fca.jpg"
 toc: true
 ---
 
@@ -73,9 +73,13 @@ $ sudo pacman -Syyu
 
 [Manjaro 安装 Yay](/posts/manjaro-install-yay)
 
-[Manjaro 安装搜狗拼音输入法](/posts/manjaro-sogoupinyin)
-
 [Manjaro 安装 Oh My Zsh](/posts/manjaro-install-oh-my-zsh/)
+
+[Manjaro 安装 搜狗拼音输入法](/posts/manjaro-sogoupinyin)
+
+
+
+
 
 [Manjaro 常用软件名称]
 

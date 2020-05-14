@@ -6,7 +6,7 @@ recommend: false
 
 tags: []
 categories: []
-hiddenFromHomePage: false
+hiddenFromHomePage: true
 
 featuredImage: ""
 toc: true

@@ -6,7 +6,7 @@ recommend: false
 
 tags: ['uni-app', '小程序', '跨端']
 categories: ['Programing']
-hiddenFromHomePage: false
+hiddenFromHomePage: true
 
 featuredImage: "//static.u1s3.com/images/8667a72a51fdb605636eefe0c36e91b0.jpg"
 toc: true

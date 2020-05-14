@@ -6,7 +6,7 @@ recommend: false
 
 tags: ['Docker', 'Laradock', 'Laravel']
 categories: ['Programing']
-hiddenFromHomePage: false
+hiddenFromHomePage: true
 
 featuredImage: "https://static.u1s3.com/images/cb908e94a7412dfd0e8512f27399c7bb.jpg"
 toc: true

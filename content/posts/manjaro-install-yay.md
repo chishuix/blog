@@ -17,7 +17,7 @@ toc: true
 ## 程序安装
 
 ```bash
-$ $ sudo pacman -S yay
+$ sudo pacman -S yay
 ```
 
 ## 配置 AUR 镜像
@@ -34,12 +34,12 @@ $ yay -P -g
 
 ## 基本命令
 
-| 用途 | 命令              |
-| :--- | :---------------- |
-| 搜索 | $ yay -Ss package |
-| 安装 | $ yay -S package  |
-| 卸载 | $ yay -R package  |
-| 列表 | $ yay -Qs package |
+| 用途 | 命令                |
+| :--- | :------------------ |
+| 搜索 | `$ yay -Ss package` |
+| 安装 | `$ yay -S package`  |
+| 卸载 | `$ yay -R package`  |
+| 列表 | `$ yay -Qs package` |
 
 ## 参考文档
 

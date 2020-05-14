@@ -31,7 +31,7 @@ enableEmoji = true
     # whether to include Chinese/Japanese/Korean
     hasCJKLanguage = true
     # default amount of posts in each pages
-    paginate = 12
+    paginate = 25
     # [UA-XXXXXXXX-X] google analytics code
     googleAnalytics = "UA-160608138-1"
     # copyright description used only for seo schema
@@ -103,9 +103,9 @@ enableEmoji = true
           [languages.en.params.home.posts]
             enable = true
             # special amount of posts in each home posts page
-            paginate = 5
+            paginate = 20
             # default behavior when you don't set "hiddenFromHomePage" in front matter
-            defaultHiddenFromHomePage = false
+            defaultHiddenFromHomePage = true
           # Home Page Recommend
           [languages.en.params.home.recommends]
             enable = true

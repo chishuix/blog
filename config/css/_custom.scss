@@ -284,6 +284,10 @@ a {
   .featured-image {
     margin: 1rem 0;
     padding: 0;
+    img {
+      width: 600px;
+      max-width: 100%;
+    }
   }
   
   .post-meta {
@@ -333,6 +337,11 @@ a {
       }
     }
     
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+    
     .table-wrapper>table thead {
       background-color: $header-background-color;
     }
@@ -364,6 +373,20 @@ a {
     
   .comment {
     padding: 2rem;
+  }
+}
+
+.archive {
+  .tag-cloud-tags {
+    a {
+      &:active, &:focus, &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+  .archive-item-date {
+    font-family: initial;
+    font-style: italic;
   }
 }
 

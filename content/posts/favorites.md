@@ -8,7 +8,7 @@ tags: []
 categories: []
 hiddenFromHomePage: true
 
-featuredImage: ""
+featuredImage: "//static.u1s3.com/images/dac55e614533060852e20eed12e2671f.jpg"
 toc: true
 ---
 

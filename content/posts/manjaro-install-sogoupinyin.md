@@ -1,10 +1,10 @@
 ---
-title: "Manjaro 安装搜狗拼音输入法"
+title: "Manjaro 安装 搜狗拼音输入法"
 date: 2020-05-11T10:37:33+08:00
 draft: false
 recommend: false
 
-tags: ['Manjaro', '输入法']
+tags: ['Manjaro']
 categories: ['Programing']
 hiddenFromHomePage: true
 

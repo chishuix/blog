@@ -4,7 +4,7 @@ date: 2019-11-09T21:07:17+08:00
 draft: false
 recommend: false
 
-tags: ['Git']
+tags: ['Git', '代理']
 categories: ['Programing']
 hiddenFromHomePage: true
 
@@ -94,8 +94,5 @@ Host github.com *.github.com
   IdentityFile "~/.ssh/id_rsa"
   TCPKeepAlive yes
 ```
-
-
-
 
 

@@ -1,0 +1,302 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Windows Terminal 配置 Powershell 7 - U1S3</title><meta name=Description content="有一说三，池水的一片海。"><meta property="og:title" content="Windows Terminal 配置 Powershell 7"><meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://www.u1s3.com/posts/windows-terminal-config-powershell-7/"><meta property="article:published_time" content="2020-06-30T10:29:37+08:00"><meta property="article:modified_time" content="2020-06-30T10:29:37+08:00"><meta property="og:site_name" content="U1S3"><meta name=twitter:card content="summary"><meta name=twitter:title content="Windows Terminal 配置 Powershell 7"><meta name=twitter:description content><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel=canonical href=https://www.u1s3.com/posts/windows-terminal-config-powershell-7/><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=prev href=https://www.u1s3.com/posts/download-and-merge-ts-video/><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><link rel=stylesheet href=/css/style.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Windows Terminal 配置 Powershell 7","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.u1s3.com\/posts\/windows-terminal-config-powershell-7\/"},"image":{"@type":"ImageObject","url":"https:\/\/www.u1s3.com\/images\/cover.jpg","width":800,"height":600},"genre":"posts","keywords":"Windows Terminal, Powershell","wordcount":1019,"url":"https:\/\/www.u1s3.com\/posts\/windows-terminal-config-powershell-7\/","datePublished":"2020-06-30","dateModified":"2020-06-30","license":"CC BY-NC 4.0","publisher":{"@type":"Organization","name":"chishui","logo":{"@type":"ImageObject","url":"https:\/\/www.u1s3.com\/images\/logo.jpg","width":127,"height":40}},"author":{"@type":"Person","name":"chishui"},"description":""}</script></head><body><script>if(!window.localStorage||!window.localStorage.getItem('theme')){window.isDark=window.matchMedia('(prefers-color-scheme: dark)').matches;}else{window.isDark=(window.localStorage&&window.localStorage.getItem('theme'))==='dark';}
+window.isDark&&document.body.classList.add('dark-theme');</script><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/>U1S3</a><div>有一说三，池水的一片海。</div></div><div class=menu><a class=menu-item href=/posts/>Posts</a><a class=menu-item href=/tags/>Tags</a><a class=menu-item href=/categories/>Categories</a><a class=menu-item href=/posts/favorites/>Favorites</a><a class=menu-item href=https://github.com/chishuix><i class="fab fa-github fa-fw"></i></a></div></div></header><header class=mobile id=header-mobile><div class=header-wrapper><div class=header-container><div class=header-title><a href=/>U1S3</a><div>有一说三，池水的一片海。</div></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><a class=menu-item href=/posts/>Posts</a><a class=menu-item href=/tags/>Tags</a><a class=menu-item href=/categories/>Categories</a><a class=menu-item href=/posts/favorites/>Favorites</a><a class=menu-item href=https://github.com/chishuix><i class="fab fa-github fa-fw"></i></a></div></div></header><script>window.desktopHeaderMode="normal";window.mobileHeaderMode="normal";</script><main class="main animated fadeIn"><div class=container><article class="page single"><h1 class=single-title>Windows Terminal 配置 Powershell 7</h1><div class=post-meta><div class=post-meta-line><span class=post-meta-line-item>Posted on <a href=javascript:void(0); datetime=2020-06-30>2020-06-30</a>&nbsp; by <a href=/ rel=author target=_blank>chishui</a></span></div></div><div class=toc id=toc-auto><h2 class=toc-title></h2><div class=toc-content id=toc-content-auto></div></div><div class=toc id=toc-static><details><summary><div class=toc-title><span></span><span><i class="details icon fas fa-angle-down"></i></span></div></summary><div class=toc-content id=toc-content-static><nav id=TableOfContents><ul><li><a href=#环境准备>环境准备</a><ul><li><a href=#windows-terminal>Windows Terminal</a></li><li><a href=#fira-code>Fira Code</a></li><li><a href=#powershell-core>Powershell Core</a></li></ul></li><li><a href=#安装-powershell-插件>安装 Powershell 插件</a></li><li><a href=#配置-windows-terminal>配置 Windows Terminal</a></li><li><a href=#添加右键菜单>添加右键菜单</a></li><li><a href=#添加-powershell-启动参数>添加 Powershell 启动参数</a></li><li><a href=#参考文档>参考文档</a></li></ul></nav></div></details></div><div class=content id=content><h2 id=环境准备>环境准备</h2><p>既然是使用 Windows Terminal 来配置 Powershell 7，那首先需要安装它们。</p><h3 id=windows-terminal>Windows Terminal</h3><p>可以 <a href=microsoft.com/zh-cn/p/windows-terminal/9n0dx20hk701 rel="noopener noreffer">点击这里</a>
+通过网页跳转到安装界面，或者直接在 <strong>Microsoft Store</strong> 里搜索安装。</p><h3 id=fira-code>Fira Code</h3><p>Fira Code 是一款支持 ligature 连字功能，而且是一款专门为代码显示准备的字体，<a href=https://github.com/tonsky/FiraCode/releases target=_blank rel="noopener noreffer">点击这里</a>
+获取最新的 Releases，Windows 下安装 <code>.ttf</code>格式的字体。</p><h3 id=powershell-core>Powershell Core</h3><p>这里的 Powershell 和 Windows 自带的 Powershell 不可同日而语，<a href=https://github.com/PowerShell/PowerShell/releases target=_blank rel="noopener noreffer">点击这里</a>
+获取最新的 Releases，下载并安装 <code>.msi</code> 格式的安装包。</p><h2 id=安装-powershell-插件>安装 Powershell 插件</h2><p>使用上面安装的新版 Powershell 运行下面命令。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-powershell data-lang=powershell><span class=c># PSReadline </span>
+<span class=c># 类似 zsh，让命令行很好用 </span>
+<span class=p>&gt;</span> <span class=nb>Install-Module</span> <span class=n>-Name</span> <span class=n>PSReadLine</span> <span class=n>-AllowPrerelease</span> <span class=n>-Force</span>
+
+<span class=c># posh-git </span>
+<span class=c># 让 git 更好用</span>
+<span class=p>&gt;</span> <span class=nb>Install-Module</span> <span class=n>posh-git</span> <span class=n>-Scope</span> <span class=n>CurrentUser</span>
+
+<span class=c># oh-my-posh </span>
+<span class=c># 让命令行更酷炫、优雅</span>
+<span class=p>&gt;</span> <span class=nb>Install-Module</span> <span class=n>oh-my-posh</span> <span class=n>-Scope</span> <span class=n>CurrentUser</span>
+</code></pre></td></tr></table></div></div><p>安装过程稍慢，等待即可，如提示包来源不可信，输入 <code>Y</code>。</p><h2 id=配置-windows-terminal>配置 Windows Terminal</h2><p><em>settings.json</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-json data-lang=json><span class=err>//</span> <span class=err>使用新版</span> <span class=err>Powershell</span> <span class=err>作为默认命令行工具</span>
+<span class=s2>&#34;defaultProfile&#34;</span><span class=err>:</span> <span class=s2>&#34;{574e775e-4f2a-5b96-ac1e-a2962a402336}&#34;</span><span class=err>,</span>
+
+<span class=err>//</span> <span class=err>Powershell</span> <span class=err>配置</span>
+<span class=s2>&#34;profiles&#34;</span><span class=err>:</span>
+<span class=p>{</span>
+    <span class=err>//</span> <span class=err>...</span>
+    <span class=nt>&#34;list&#34;</span><span class=p>:</span>
+    <span class=p>[</span>
+        <span class=err>//</span> <span class=err>...</span>
+        <span class=p>{</span>
+            <span class=err>//</span> <span class=err>看准</span> <span class=err>guid</span>
+            <span class=nt>&#34;guid&#34;</span><span class=p>:</span> <span class=s2>&#34;{574e775e-4f2a-5b96-ac1e-a2962a402336}&#34;</span><span class=p>,</span>
+            <span class=nt>&#34;hidden&#34;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+            <span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;pwsh&#34;</span><span class=p>,</span>
+            <span class=err>//</span> <span class=err>这里的路径可能会由变动，原因是安装的是稳定版还是预览版</span>
+            <span class=nt>&#34;commandline&#34;</span><span class=p>:</span> <span class=s2>&#34;C:/Program Files/PowerShell/7/pwsh.exe -nologo&#34;</span><span class=p>,</span>
+            <span class=nt>&#34;source&#34;</span><span class=p>:</span> <span class=s2>&#34;Windows.Terminal.PowershellCore&#34;</span><span class=p>,</span>
+            <span class=nt>&#34;startingDirectory&#34;</span><span class=p>:</span> <span class=s2>&#34;.&#34;</span><span class=p>,</span>
+            <span class=nt>&#34;fontFace&#34;</span><span class=p>:</span> <span class=s2>&#34;Fira Code&#34;</span><span class=p>,</span>
+            <span class=nt>&#34;fontSize&#34;</span><span class=p>:</span> <span class=mi>11</span><span class=p>,</span>
+            <span class=nt>&#34;historySize&#34;</span><span class=p>:</span> <span class=mi>9001</span><span class=p>,</span>
+            <span class=nt>&#34;padding&#34;</span><span class=p>:</span> <span class=s2>&#34;5, 5, 20, 25&#34;</span><span class=p>,</span>
+            <span class=nt>&#34;snapOnInput&#34;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+            <span class=nt>&#34;useAcrylic&#34;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+            <span class=nt>&#34;colorScheme&#34;</span><span class=p>:</span> <span class=s2>&#34;Homebrew&#34;</span>
+        <span class=p>}</span>
+    <span class=p>]</span>
+<span class=p>}</span><span class=err>,</span>
+
+<span class=err>//</span> <span class=err>色彩主题</span>
+<span class=s2>&#34;schemes&#34;</span><span class=err>:</span> <span class=p>[</span>
+    <span class=p>{</span>
+        <span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;Homebrew&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;black&#34;</span><span class=p>:</span> <span class=s2>&#34;#282828&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;red&#34;</span><span class=p>:</span> <span class=s2>&#34;#FC5275&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;green&#34;</span><span class=p>:</span> <span class=s2>&#34;#00a600&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;yellow&#34;</span><span class=p>:</span> <span class=s2>&#34;#b8b87a&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;blue&#34;</span><span class=p>:</span> <span class=s2>&#34;#6666e9&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;purple&#34;</span><span class=p>:</span> <span class=s2>&#34;#b200b2&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;cyan&#34;</span><span class=p>:</span> <span class=s2>&#34;#00a6b2&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;white&#34;</span><span class=p>:</span> <span class=s2>&#34;#bfbfbf&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;brightBlack&#34;</span><span class=p>:</span> <span class=s2>&#34;#666666&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;brightRed&#34;</span><span class=p>:</span> <span class=s2>&#34;#e50000&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;brightGreen&#34;</span><span class=p>:</span> <span class=s2>&#34;#00d900&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;brightYellow&#34;</span><span class=p>:</span> <span class=s2>&#34;#e5e500&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;brightBlue&#34;</span><span class=p>:</span> <span class=s2>&#34;#0000ff&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;brightPurple&#34;</span><span class=p>:</span> <span class=s2>&#34;#e500e5&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;brightCyan&#34;</span><span class=p>:</span> <span class=s2>&#34;#00e5e5&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;brightWhite&#34;</span><span class=p>:</span> <span class=s2>&#34;#e5e5e5&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;background&#34;</span><span class=p>:</span> <span class=s2>&#34;#283033&#34;</span><span class=p>,</span>
+        <span class=nt>&#34;foreground&#34;</span><span class=p>:</span> <span class=s2>&#34;#7ab87a&#34;</span>
+    <span class=p>}</span>
+<span class=p>]</span><span class=err>,</span>
+</code></pre></td></tr></table></div></div><h2 id=添加右键菜单>添加右键菜单</h2><p><a href=https://github.com/lextm/windowsterminal-shell/ target=_blank rel="noopener noreffer">点击这里</a>
+获取最新的脚本，然后 <strong>以管理员身份运行</strong> Windows Terminal，并使用新版 Powershell 执行脚本。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-powershell data-lang=powershell><span class=p>&gt;</span> <span class=p>.\</span><span class=n>install</span><span class=p>.</span><span class=n>ps1</span> <span class=n>mini</span>
+</code></pre></td></tr></table></div></div><p>如果修改了 Profile，可能需要先 <code>uninstall.ps1</code> 一下，然后重新执行上面的安装命令。</p><h2 id=添加-powershell-启动参数>添加 Powershell 启动参数</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-powershell data-lang=powershell><span class=p>&gt;</span> <span class=n>notepad</span><span class=p>.</span><span class=n>exe</span> <span class=nv>$Profile</span>
+</code></pre></td></tr></table></div></div><p><em>Microsoft.PowerShell_profile.ps1</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-go data-lang=go><span class=p>&lt;</span><span class=err>#</span>
+ <span class=o>*</span> <span class=nx>FileName</span><span class=p>:</span> <span class=nx>Microsoft</span><span class=p>.</span><span class=nx>PowerShell_profile</span><span class=p>.</span><span class=nx>ps1</span>
+ <span class=o>*</span> <span class=nx>Author</span><span class=p>:</span> <span class=nx>刘</span> <span class=nx>鹏</span>
+ <span class=o>*</span> <span class=nx>Email</span><span class=p>:</span> <span class=nx>littleNewton6</span><span class=err>@</span><span class=nx>outlook</span><span class=p>.</span><span class=nx>com</span>
+ <span class=o>*</span> <span class=nx>Date</span><span class=p>:</span> <span class=mi>2020</span><span class=p>,</span> <span class=nx>May</span><span class=p>.</span> <span class=mi>1</span>
+ <span class=o>*</span> <span class=nx>Copyright</span><span class=p>:</span> <span class=nx>No</span> <span class=nx>copyright</span><span class=p>.</span> <span class=nx>You</span> <span class=nx>can</span> <span class=nx>use</span> <span class=nx>this</span> <span class=nx>code</span> <span class=k>for</span> <span class=nx>anything</span> <span class=nx>with</span> <span class=nx>no</span> <span class=nx>warranty</span><span class=p>.</span>
+<span class=err>#</span><span class=p>&gt;</span>
+
+<span class=err>#</span><span class=o>-------------------------------</span> <span class=nx>Import</span> <span class=nx>Modules</span> <span class=nx>BEGIN</span> <span class=o>-------------------------------</span>
+<span class=err>#</span> <span class=nx>引入</span> <span class=nx>posh</span><span class=o>-</span><span class=nx>git</span>
+<span class=nx>Import</span><span class=o>-</span><span class=nx>Module</span> <span class=nx>posh</span><span class=o>-</span><span class=nx>git</span>
+
+<span class=err>#</span> <span class=nx>引入</span> <span class=nx>oh</span><span class=o>-</span><span class=nx>my</span><span class=o>-</span><span class=nx>posh</span>
+<span class=nx>Import</span><span class=o>-</span><span class=nx>Module</span> <span class=nx>oh</span><span class=o>-</span><span class=nx>my</span><span class=o>-</span><span class=nx>posh</span>
+
+<span class=err>#</span> <span class=nx>设置</span> <span class=nx>PowerShell</span> <span class=nx>主题</span>
+<span class=nx>Set</span><span class=o>-</span><span class=nx>Theme</span> <span class=nx>Paradox</span>
+<span class=err>#</span><span class=o>-------------------------------</span> <span class=nx>Import</span> <span class=nx>Modules</span> <span class=nx>END</span>   <span class=o>-------------------------------</span>
+
+<span class=err>#</span><span class=o>-------------------------------</span>  <span class=nx>Set</span> <span class=nx>Hot</span><span class=o>-</span><span class=nx>keys</span> <span class=nx>BEGIN</span>  <span class=o>-------------------------------</span>
+<span class=err>#</span> <span class=nx>设置</span> <span class=nx>Tab</span> <span class=nx>键补全</span>
+<span class=err>#</span> <span class=nx>Set</span><span class=o>-</span><span class=nx>PSReadlineKeyHandler</span> <span class=o>-</span><span class=nx>Key</span> <span class=nx>Tab</span> <span class=o>-</span><span class=nx>Function</span> <span class=nx>Complete</span>
+
+<span class=err>#</span> <span class=nx>设置</span> <span class=nx>Tab</span> <span class=nx>为菜单补全和</span> <span class=nx>Intellisense</span>
+<span class=nx>Set</span><span class=o>-</span><span class=nx>PSReadLineKeyHandler</span> <span class=o>-</span><span class=nx>Key</span> <span class=s>&#34;Tab&#34;</span> <span class=o>-</span><span class=nx>Function</span> <span class=nx>MenuComplete</span>
+
+<span class=err>#</span> <span class=nx>设置</span> <span class=nx>Ctrl</span><span class=o>+</span><span class=nx>d</span> <span class=nx>为退出</span> <span class=nx>PowerShell</span>
+<span class=nx>Set</span><span class=o>-</span><span class=nx>PSReadlineKeyHandler</span> <span class=o>-</span><span class=nx>Key</span> <span class=s>&#34;Ctrl+d&#34;</span> <span class=o>-</span><span class=nx>Function</span> <span class=nx>ViExit</span>
+
+<span class=err>#</span> <span class=nx>设置</span> <span class=nx>Ctrl</span><span class=o>+</span><span class=nx>z</span> <span class=nx>为撤销</span>
+<span class=nx>Set</span><span class=o>-</span><span class=nx>PSReadLineKeyHandler</span> <span class=o>-</span><span class=nx>Key</span> <span class=s>&#34;Ctrl+z&#34;</span> <span class=o>-</span><span class=nx>Function</span> <span class=nx>Undo</span>
+
+<span class=err>#</span> <span class=nx>设置向上键为后向搜索历史记录</span>
+<span class=nx>Set</span><span class=o>-</span><span class=nx>PSReadLineKeyHandler</span> <span class=o>-</span><span class=nx>Key</span> <span class=nx>UpArrow</span> <span class=o>-</span><span class=nx>Function</span> <span class=nx>HistorySearchBackward</span>
+
+<span class=err>#</span> <span class=nx>设置向下键为前向搜索历史纪录</span>
+<span class=nx>Set</span><span class=o>-</span><span class=nx>PSReadLineKeyHandler</span> <span class=o>-</span><span class=nx>Key</span> <span class=nx>DownArrow</span> <span class=o>-</span><span class=nx>Function</span> <span class=nx>HistorySearchForward</span>
+<span class=err>#</span><span class=o>-------------------------------</span>  <span class=nx>Set</span> <span class=nx>Hot</span><span class=o>-</span><span class=nx>keys</span> <span class=nx>END</span>    <span class=o>-------------------------------</span>
+
+<span class=err>#</span><span class=o>-------------------------------</span>    <span class=nx>Functions</span> <span class=nx>BEGIN</span>   <span class=o>-------------------------------</span>
+<span class=err>#</span> <span class=nx>Python</span> <span class=nx>直接执行</span>
+<span class=err>$</span><span class=nx>env</span><span class=p>:</span><span class=nx>PATHEXT</span> <span class=o>+=</span> <span class=s>&#34;;.py&#34;</span>
+
+<span class=err>#</span> <span class=nx>更新</span> <span class=nx>pip</span> <span class=nx>的方法</span>
+<span class=nx>function</span> <span class=nx>Update</span><span class=o>-</span><span class=nx>Packages</span> <span class=p>{</span>
+    <span class=err>#</span> <span class=nx>update</span> <span class=nx>pip</span>
+    <span class=nx>Write</span><span class=o>-</span><span class=nx>Host</span> <span class=s>&#34;Step 1: 更新 pip&#34;</span> <span class=o>-</span><span class=nx>ForegroundColor</span> <span class=nx>Magenta</span> <span class=o>-</span><span class=nx>BackgroundColor</span> <span class=nx>Cyan</span>
+    <span class=err>$</span><span class=nx>a</span> <span class=p>=</span> <span class=nx>pip</span> <span class=nx>list</span> <span class=o>--</span><span class=nx>outdated</span>
+    <span class=err>$</span><span class=nx>num_package</span> <span class=p>=</span> <span class=err>$</span><span class=nx>a</span><span class=p>.</span><span class=nx>Length</span> <span class=o>-</span> <span class=mi>2</span>
+    <span class=k>for</span> <span class=p>(</span><span class=err>$</span><span class=nx>i</span> <span class=p>=</span> <span class=mi>0</span><span class=p>;</span> <span class=err>$</span><span class=nx>i</span> <span class=o>-</span><span class=nx>lt</span> <span class=err>$</span><span class=nx>num_package</span><span class=p>;</span> <span class=err>$</span><span class=nx>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+        <span class=err>$</span><span class=nx>tmp</span> <span class=p>=</span> <span class=p>(</span><span class=err>$</span><span class=nx>a</span><span class=p>[</span><span class=mi>2</span> <span class=o>+</span> <span class=err>$</span><span class=nx>i</span><span class=p>].</span><span class=nf>Split</span><span class=p>(</span><span class=s>&#34; &#34;</span><span class=p>))[</span><span class=mi>0</span><span class=p>]</span>
+        <span class=nx>pip</span> <span class=nx>install</span> <span class=o>-</span><span class=nx>U</span> <span class=err>$</span><span class=nx>tmp</span>
+    <span class=p>}</span>
+
+    <span class=err>#</span> <span class=nx>update</span> <span class=nx>TeX</span> <span class=nx>Live</span>
+    <span class=err>$</span><span class=nx>CurrentYear</span> <span class=p>=</span> <span class=nx>Get</span><span class=o>-</span><span class=nx>Date</span> <span class=o>-</span><span class=nx>Format</span> <span class=nx>yyyy</span>
+    <span class=nx>Write</span><span class=o>-</span><span class=nx>Host</span> <span class=s>&#34;Step 2: 更新 TeX Live&#34;</span> <span class=err>$</span><span class=nx>CurrentYear</span> <span class=o>-</span><span class=nx>ForegroundColor</span> <span class=nx>Magenta</span> <span class=o>-</span><span class=nx>BackgroundColor</span> <span class=nx>Cyan</span>
+    <span class=nx>tlmgr</span> <span class=nx>update</span> <span class=o>--</span><span class=nx>self</span>
+    <span class=nx>tlmgr</span> <span class=nx>update</span> <span class=o>--</span><span class=nx>all</span>
+<span class=p>}</span>
+<span class=err>#</span><span class=o>-------------------------------</span>    <span class=nx>Functions</span> <span class=nx>END</span>     <span class=o>-------------------------------</span>
+
+<span class=err>#</span><span class=o>-------------------------------</span>   <span class=nx>Set</span> <span class=nx>Alias</span> <span class=nx>Begin</span>    <span class=o>-------------------------------</span>
+<span class=err>#</span> <span class=mf>1.</span> <span class=nx>编译函数</span> <span class=nx>make</span>
+<span class=nx>function</span> <span class=nx>MakeThings</span> <span class=p>{</span>
+    <span class=nx>nmake</span><span class=p>.</span><span class=nx>exe</span> <span class=err>$</span><span class=nx>args</span> <span class=o>-</span><span class=nx>nologo</span>
+<span class=p>}</span>
+<span class=nx>Set</span><span class=o>-</span><span class=nx>Alias</span> <span class=o>-</span><span class=nx>Name</span> <span class=nx>make</span> <span class=o>-</span><span class=nx>Value</span> <span class=nx>MakeThings</span>
+
+<span class=err>#</span> <span class=mf>2.</span> <span class=nx>更新系统</span> <span class=nx>os</span><span class=o>-</span><span class=nx>update</span>
+<span class=nx>Set</span><span class=o>-</span><span class=nx>Alias</span> <span class=o>-</span><span class=nx>Name</span> <span class=nx>os</span><span class=o>-</span><span class=nx>update</span> <span class=o>-</span><span class=nx>Value</span> <span class=nx>Update</span><span class=o>-</span><span class=nx>Packages</span>
+
+<span class=err>#</span> <span class=mf>3.</span> <span class=nx>查看目录</span> <span class=nx>ls</span> <span class=o>&amp;</span> <span class=nx>ll</span>
+<span class=nx>function</span> <span class=nx>ListDirectory</span> <span class=p>{</span>
+    <span class=p>(</span><span class=nx>Get</span><span class=o>-</span><span class=nx>ChildItem</span><span class=p>).</span><span class=nx>Name</span>
+    <span class=nx>Write</span><span class=o>-</span><span class=nf>Host</span><span class=p>(</span><span class=s>&#34;&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=nx>Set</span><span class=o>-</span><span class=nx>Alias</span> <span class=o>-</span><span class=nx>Name</span> <span class=nx>ls</span> <span class=o>-</span><span class=nx>Value</span> <span class=nx>ListDirectory</span>
+<span class=nx>Set</span><span class=o>-</span><span class=nx>Alias</span> <span class=o>-</span><span class=nx>Name</span> <span class=nx>ll</span> <span class=o>-</span><span class=nx>Value</span> <span class=nx>Get</span><span class=o>-</span><span class=nx>ChildItem</span>
+<span class=err>#</span><span class=o>-------------------------------</span>    <span class=nx>Set</span> <span class=nx>Alias</span> <span class=nx>END</span>     <span class=o>-------------------------------</span>
+</code></pre></td></tr></table></div></div><h2 id=参考文档>参考文档</h2><p><a href=https://zhuanlan.zhihu.com/p/137595941 target=_blank rel="noopener noreffer">Windows Terminal 完美配置 PowerShell 7.1</a></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>The article was updated on 2020-06-30</span></div><div class=post-info-wordcount><span>1019 words</span></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://www.u1s3.com/posts/windows-terminal-config-powershell-7/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section><div class=post-meta><div class=post-meta-line><span class="post-meta-line-item post-category"><span>Posted in</span><span><a href=/categories/programing>Programing</a></span></span><span class="post-meta-line-item post-tag">
+<span>Tagged</span><span><a href=/tags/windows-terminal>Windows Terminal</a></span><span><a href=/tags/powershell>Powershell</a></span></span></div></div></section><section><span><a href=javascript:window.history.back();>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=https://www.u1s3.com/posts/download-and-merge-ts-video/ class=prev rel=prev title="TS 格式视频的下载与合并"><i class="fas fa-angle-left fa-fw"></i>TS 格式视频的下载与合并</a></div></div><div class=comment></div></article></div></main><footer class=footer><div class=copyright><div class=copyright-line><i class="far fa-copyright fa-fw theme-switch"></i><span itemprop=copyrightYear>2017 - 2020</span><span class=icp-splitter>&nbsp;/&nbsp;</span><br class=icp-br><span class=icp><a href=http://www.beian.miit.gov.cn/ target=_blank>苏ICP备20010716号-1</a></span><span class=icp-splitter>&nbsp;/&nbsp;</span><br class=icp-br><span class=icp><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32031102001246" target=_blank><img src=/beian.png> 苏公网安备 32031102001246号</a></span></div></div></footer></div><a href=# class="dynamic-to-top animated faster" id=dynamic-to-top><span>&nbsp;</span>
+</a><script>document.addEventListener('DOMContentLoaded',function(){lightGallery(document.getElementById('content'),{selector:'.lightgallery',speed:400,hideBarsDelay:2000,thumbnail:true,exThumbImage:'data-thumbnail',thumbWidth:80,thumbContHeight:80,});});</script><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><script src=/lib/smooth-scroll/smooth-scroll.polyfills.min.js></script><script src=/lib/lazysizes/lazysizes.min.js></script><script src=/lib/lightgallery/lightgallery.min.js></script><script src=/lib/lightgallery/lg-thumbnail.min.js></script><script src=/lib/lightgallery/lg-zoom.min.js></script><script src=/js/theme.min.js></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-160608138-1','auto');ga('set','anonymizeIp',true);ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></body></html>

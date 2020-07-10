@@ -79,7 +79,7 @@ enableEmoji = true
         weight = 5
       [languages.en.params]
         # site description
-        description = "有一说三，池水的一片海。 "
+        description = "# Learn More Every Day."
         # site keywords
         keywords = ["Theme", "Hugo"]
         # site default theme ("light", "dark", "auto")
